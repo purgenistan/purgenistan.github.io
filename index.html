@@ -76,6 +76,7 @@
     $(document).ready(function() {
         var link = $('.menu-link');
         var menu = $('.menu');
+        var close_link = $('.menu a')
         var main = $('.main');
         var about_us = $('.about-us');
         var clients = $('.clients');
@@ -88,6 +89,10 @@
             link.toggleClass('menu-link__active');
         });
         link.click(function() {
+            menu.toggleClass('menu-active');
+        });
+        close_link.click(function() {
+            link.toggleClass('menu-link__active');
             menu.toggleClass('menu-active');
         });
         main.click(function() {
