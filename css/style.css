@@ -1,0 +1,96 @@
+body {
+  background: url('../img/bg.jpg') no-repeat;
+  background-size: cover;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.7s;
+  z-index: 1;
+  background: url('../img/gradient.png') no-repeat;
+  opacity: .8;
+}
+.menu-link {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -9px;
+  top: 50%;
+  margin-top: -1px;
+  height: 2px;
+  width: 18px;
+  background-color: #333;
+}
+.menu-link span:before {
+  content: "";
+  margin-top: -6px;
+  transition: all 0.6s;
+}
+.menu-link span:after {
+  content: "";
+  margin-top: 4px;
+  transition: all 0.6s;
+}
+.menu-link__active span {
+  background-color: transparent;
+}
+.menu-link__active span:before {
+  transform: rotate(-135deg);
+  margin-top: 0;
+}
+.menu-link__active span:after {
+  transform: rotate(135deg);
+  margin-top: 0;
+}
+.menu-active {
+  left: 0;
+}
+.menu ul {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+.menu ul a {
+  display: block;
+  width: 100vw;
+  font-size: 17px;
+  line-height: 4;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #fff;
+  transition: all 0.2s;
+}
+.menu ul a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+section {
+  text-align: center;
+  height: 100%;
+  color: #aeaeae;
+  font-size: 20px;
+  padding: 20px 100px;
+}
+section h2 {
+  padding-bottom: 40px;
+  text-align: center;
+}
