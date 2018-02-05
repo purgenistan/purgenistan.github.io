@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vw;
+    background: url('../img/Shape 4.jpg') no-repeat;
+    background-size: cover;
+}
+
+.section {
+    width: 1000px;
+    height: 792px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background: url('../img/bg.png') no-repeat center;
+    background-size: cover;
+}
+
+.box {
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-left: 300px;
+}
+
+.caption {
+    text-align: center;
+}
+
+.caption h2 {
+    width: 360px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.caption h3 {
+    width: 375px;
+    font-size: 16px;
+    margin-bottom: 50px;
+    font-weight: 400;
+    color: #000;
+}
+
+.tab-contents {
+    width: 400px;
+    padding-top: 15px;
+    padding-bottom: 37px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.tab-contents input {
+    display: block;
+    width: 333px;
+    font-size: 16px;
+    margin-left: 25px;
+    padding: 39px 25px 18px 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+.form-1 {
+    background: url(../img/forma-1.png) no-repeat;
+    background-position: 0 40px;
+}
+
+.form-2 {
+    background: url(../img/forma-2.png) no-repeat;
+    background-position: 0 40px;
+}
+
+.form-3 {
+    background: url(../img/forma-3.png) no-repeat;
+    background-position: 0 40px;
+}
+
+.btn {
+    display: block;
+    margin-top: 30px;
+    margin-left: 105px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 19px 52px 18px 32px;
+    background: #82c5bf url('../img/arrow.png') no-repeat;
+    background-position: 139px 22px;
+    border-radius: 30px;
+    border: none;
+}
+.btn:hover {
+	background-color: #97a7c0;
+}
+
+.login {
+    width: 100%;
+    margin-top: 7px;
+    margin-left: 26px;
+}
+
+.login p {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 15px;
+}
+
+.login a {
+    color: #f69a7a;
+    text-decoration: none;
+}
+.login a:hover {
+	color: #97a7c0;
+}
+.error {
+    font-size: 10px;
+    color: red;
+}
+input .error {
+	border: 1px solid red;
+}

@@ -5,52 +5,84 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="box">
-        <div class="tabs-pannel">
-            <div class="tabs">
-                <div data-target="tab-content-1" class="tab tab-1"><span>Вопросы</span></div>
-                <div data-target="tab-content-2" class="tab tab-2"><span>Жалоба</span></div>
-                <div data-target="tab-content-3" class="tab tab-3"><span>Регистрация</span></div>
+    <section class="section">
+        <div class="box">
+            <div class="caption">
+                <h2>Сохрани свой аккаунт</h2>
+                <h3>Получи бесплатно неограниченное количество форм, вопросов и ответов.</h3>
             </div>
-        </div>
-        <form class="tab-contents" action="#" method="post">
-            <div class="tab-content tab-content-3">
-                <label for="name">Имя</label>
-                <input id="name" type="text" name="name" value="">
-                <label for="email">email</label>
-                <input id="email" type="mail" name="mail" value="">
-            </div>
-            <div class="tab-content tab-content-2">
-                <label for="message">Тема сообщения</label>
-                <input id="message" type="text" name="message" value="">
-            </div>
-            <button class="btn" type="submit">Отправить сообщение</button>
-        </form>
-        <div class="tab-content tab-content-1">
-            <form class="tab-contents">
-                <label for="text">Сообщение</label>
-                <textarea id="text"></textarea>
+            <form class="tab-contents" method="POST" action="#"  id="form_ajax">
+                <input type="hidden" name="kaitag" value="main_form">
+                <input class="form-1" id="name" type="text" name="username" value="" minlength="5" placeholder="Имя или никнейм">
+                <input class="form-2" id="email" type="email" name="email" value="" minlength="7" placeholder="Email">
+                <input class="form-3" id="password" type="password" name="password" value="" minlength="7" placeholder="Пароль">
+                <button class="btn" type="submit">Сохранить</button>
             </form>
+            <div class="login">
+                <p>Уже есть аккаунт?</p>
+                <a href="#">Войти</a>
+            </div>
         </div>
-    </div>
-    </div>
-    <script src="jquery/jquery-1.12.4.min.js"></script>
-    <script src="js/wow.min.js"></script>
+    </section>
+ 
+    <script src="jquery/jquery.validate.min.js"></script>
+         <script src="jquery/jquery-1.12.4.min.js "></script>
     <script>
-    new WOW().init();
-    </script>
-    <script>
-     var tab = $('.tab');
-    tab.click(function() {
-        var target = $(this).attr('data-target');
-        $('.tab-content').slideUp();
-        $('.' + target).slideToggle('slow')
+    $('form').validate({
+        rules: {
+            name: {
+                required: true,
+                minLenght: 2
+            },
+            email: {
+                required: true,
+                minlength: 7,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 7,
+                password: true
+            }
+        },
+        messages: {
+            name: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 5 символов'
+            },
+            email: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 7 символов',
+                email: 'Введите корректный email'
+            },
+            password: {
+                required: 'Это поле обязательно для заполнения!',
+                minlength: 'Не менее 7 символов',
+                email: 'Введите корректный пароль'
+            }
+        }
     });
+    </script>
+  
+    <script>
+     $(document).ready(function() {
+                $("#form_ajax").submit(function() { 
+                        $.ajax({
+                                type: "POST",
+                                url: "mail.php",
+                                data: $(this).serialize()
+                            }).done(function() {
+                                    $(this).find('input').val('');
+                                    alert("Ваше сообщение отпрвлено!");
+                                    $('#form_ajax').trigger('reset');
+                                });
+                        return false;
+                        });
+                });
     </script>
 </body>
 
